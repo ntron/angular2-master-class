@@ -6,9 +6,10 @@ import {ContactsService} from './contacts.service';
 import {RouterModule} from '@angular/router';
 import {ContactsAppRoutes} from './app.routes';
 import {ContactsListComponent} from './contacts-list/contacts-list.component';
+import { ContactsDetailComponent } from './contacts-detail/contacts-detail.component';
 
 @NgModule({
-  declarations: [ContactsAppComponent, ContactsHeaderComponent, ContactsListComponent],
+  declarations: [ContactsAppComponent, ContactsHeaderComponent, ContactsListComponent, ContactsDetailComponent],
   imports: [BrowserModule, RouterModule.forRoot(ContactsAppRoutes)],
   bootstrap: [ContactsAppComponent],
   providers: [

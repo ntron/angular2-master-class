@@ -9,7 +9,9 @@
     - sobald [] ist der value eine expression (Shorthand Syntax)
     - src="{{ }} oder [src]="" oder bind-src=""
     -->
-    <img [src]=contact.image alt="" class="circle">
-    <span class="title" [title]=contact.name >{{contact.name}}</span>
+    <a [routerLink]="['/contact', contact.id]">
+      <img [src]=contact.image alt="" class="circle">
+      <span class="title" [title]=contact.name>{{contact.name}}</span>
+    </a>
   </li>
 </ul>
