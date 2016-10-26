@@ -10,14 +10,14 @@ import {Contact} from "../models/contact";
 })
 export class ContactsDetailComponent implements OnInit {
 
-  contact:Contact;
+  contact: Contact;
 
-  constructor(private route: ActivatedRoute, private contactService: ContactsService) {
-
+  constructor(private route: ActivatedRoute, private contactsService: ContactsService) {
   }
 
   ngOnInit() {
-   this.contact = this.contactService.getContact(this.route.snapshot.params['id']);
+    this.contactsService.getContact(this.route.snapshot.params['id'])
+      .subscribe(contact => this.contact = contact);
   }
 
 }
