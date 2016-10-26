@@ -1,0 +1,15 @@
+<!-- Contact images !-->
+<ul class="collection">
+  <li class="collection-item avatar" *ngFor="let contact of contacts">
+    <!--
+    - Attributes sind immer Stings
+    - Wir wollen dem Attribut etwas anderes zuweisen
+    - Objekte gegen Attribute binden
+    - Angular2 bindet immer gegen DOM properties
+    - sobald [] ist der value eine expression (Shorthand Syntax)
+    - src="{{ }} oder [src]="" oder bind-src=""
+    -->
+    <img [src]=contact.image alt="" class="circle">
+    <span class="title" [title]=contact.name >{{contact.name}}</span>
+  </li>
+</ul>
