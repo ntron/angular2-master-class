@@ -9,10 +9,12 @@ import {RouterModule} from '@angular/router';
 import {ContactsAppRoutes} from './app.routes';
 import {ContactsListComponent} from './contacts-list/contacts-list.component';
 import {ContactsDetailComponent} from './contacts-detail/contacts-detail.component';
+import {FormsModule} from '@angular/forms';
+import { ContactsEditorComponent } from './contacts-editor/contacts-editor.component';
 
 @NgModule({
-  declarations: [ContactsAppComponent, ContactsHeaderComponent, ContactsListComponent, ContactsDetailComponent],
-  imports: [BrowserModule, RouterModule.forRoot(ContactsAppRoutes), HttpModule],
+  declarations: [ContactsAppComponent, ContactsHeaderComponent, ContactsListComponent, ContactsDetailComponent, ContactsEditorComponent],
+  imports: [BrowserModule, RouterModule.forRoot(ContactsAppRoutes), HttpModule, FormsModule],
   bootstrap: [ContactsAppComponent],
   providers: [
     {
