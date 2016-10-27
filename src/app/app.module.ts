@@ -10,8 +10,11 @@ import {ContactsAppRoutes} from './app.routes';
 import {ContactsListComponent} from './contacts-list/contacts-list.component';
 import {ContactsDetailComponent} from './contacts-detail/contacts-detail.component';
 import {FormsModule} from '@angular/forms';
-import { ContactsEditorComponent } from './contacts-editor/contacts-editor.component';
-import { API_ENDPOINT } from './app.tokens';
+import {ContactsEditorComponent} from './contacts-editor/contacts-editor.component';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/merge';
 
 @NgModule({
   declarations: [ContactsAppComponent, ContactsHeaderComponent, ContactsListComponent, ContactsDetailComponent, ContactsEditorComponent],

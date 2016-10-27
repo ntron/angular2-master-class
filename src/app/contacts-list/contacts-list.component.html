@@ -1,4 +1,5 @@
-<input name="searchInput" (input)="search($event.target.value)" type="text"/>
+<input name="searchInput" (input)="terms$.next($event.target.value)"
+       type="text"/>
 
 <!-- Contact images !-->
 <ul class="collection">
