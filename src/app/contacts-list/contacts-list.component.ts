@@ -17,18 +17,12 @@ export class ContactsListComponent implements OnInit {
   constructor(private contactsService: ContactsService) {
   }
 
-  search(term: string) {
-    this.contacts = this.contactsService
-      .search(term)
-  }
+
 
   ngOnInit() {
-
-    this.contacts = this.terms$.debounceTime(400) //Observable<string>
-      .distinctUntilChanged()
-      .switchMap((term)=> this.contactsService.search(term))//Observable<Array<Contact>>
-      //.merge(this.contactsService.getContacts().delay(5000).takeUntil(this.terms$));
-      .merge(this.contactsService.getContacts());
+    let initObs = this.contactsService.getContacts();
+    this.contacts = this.contactsService.search(this.terms$, 50)
+      .merge(initObs);
 
 
 
@@ -41,7 +35,5 @@ export class ContactsListComponent implements OnInit {
       this.contacts = Observable.merge(searchObs);
       */
   };
-
-
 
 }
