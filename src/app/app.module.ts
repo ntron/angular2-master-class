@@ -11,6 +11,7 @@ import {ContactsListComponent} from './contacts-list/contacts-list.component';
 import {ContactsDetailComponent} from './contacts-detail/contacts-detail.component';
 import {FormsModule} from '@angular/forms';
 import { ContactsEditorComponent } from './contacts-editor/contacts-editor.component';
+import { API_ENDPOINT } from './app.tokens';
 
 @NgModule({
   declarations: [ContactsAppComponent, ContactsHeaderComponent, ContactsListComponent, ContactsDetailComponent, ContactsEditorComponent],

@@ -1,6 +1,8 @@
+<input name="searchInput" (input)="search($event.target.value)" type="text"/>
+
 <!-- Contact images !-->
 <ul class="collection">
-  <li class="collection-item avatar" *ngFor="let contact of contacts">
+  <li class="collection-item avatar" *ngFor="let contact of contacts | async">
     <!--
     - Attributes sind immer Stings
     - Wir wollen dem Attribut etwas anderes zuweisen

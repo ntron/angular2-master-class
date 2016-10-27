@@ -9,7 +9,6 @@ export class ContactsService {
 
   private API_ENDPOINT = 'http://localhost:4201/api/contacts/';
 
-
   constructor(private http: Http ) {  }
 
   getContact(id: string) {
@@ -26,5 +25,11 @@ export class ContactsService {
 
   updateContact(contact: Contact) {
     return this.http.put(`${this.API_ENDPOINT}${contact.id}`, contact);
+  }
+
+  search(term: string) {
+    return this.http.get(`http://localhost:4201/api/search?text=${term}`)
+      .map((res) => { return res.json(); })
+      .map((data) => { return data.items; });
   }
 }

@@ -17,8 +17,11 @@ export class ContactsListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.contactsService.getContacts()
-      .subscribe(contacts => this.contacts = contacts);
+    this.contacts = this.contactsService.getContacts();
   }
 
+  search(term:string) {
+    this.contacts = this.contactsService
+      .search(term)
+  }
 }
