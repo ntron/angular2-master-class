@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import {ContactsAppComponent} from './contacts.component';
 import {ContactsHeaderComponent} from './contacts-header';
 import {ContactsService} from './contacts.service';
+import {EventbusService} from './eventbus.service';
 import {RouterModule} from '@angular/router';
 import {ContactsAppRoutes} from './app.routes';
 import {ContactsListComponent} from './contacts-list/contacts-list.component';
@@ -15,7 +16,8 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/merge';
-import { ContactsDetailViewComponent } from './contacts-detail-view/contacts-detail-view.component';
+import 'rxjs/add/operator/filter';
+import {ContactsDetailViewComponent} from './contacts-detail-view/contacts-detail-view.component';
 
 @NgModule({
   declarations: [ContactsAppComponent, ContactsHeaderComponent, ContactsListComponent, ContactsDetailComponent, ContactsEditorComponent, ContactsDetailViewComponent],
@@ -23,8 +25,9 @@ import { ContactsDetailViewComponent } from './contacts-detail-view/contacts-det
   bootstrap: [ContactsAppComponent],
   providers: [
     {
-      provide: ContactsService, useClass: ContactsService
-    }
+      provide: ContactsService, useClass: ContactsService,
+    },
+    EventbusService
   ]
   //ShortHand
   //providers: [ContactsService]
