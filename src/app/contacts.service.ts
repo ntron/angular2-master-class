@@ -3,8 +3,6 @@ import {Injectable} from '@angular/core';
 import {Contact} from './models/contact';
 import {Observable} from 'rxjs/Observable';
 
-//import {CONTACT_DATA} from './data/contact-data';
-
 @Injectable()
 export class ContactsService {
 
@@ -53,4 +51,10 @@ export class ContactsService {
         return data.items;
       });
   }
+
+  addContact(contact: Contact) {
+    return this.http.post(`${this.API_ENDPOINT}`, contact);
+  }
+
+
 }

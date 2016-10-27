@@ -1,11 +1,9 @@
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import {Observer} from 'rxjs/Observer';
 import {Subject} from 'rxjs/Subject';
 
-export interface EventBusArgs{
-  type:string;
-  data:any;
+export interface EventBusArgs {
+  type: string;
+  data: any;
 }
 
 @Injectable()
